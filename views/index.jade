@@ -1,0 +1,21 @@
+
+div.container(style="width:520px;margin-top: 40px")
+  if uname
+    h1 
+      | Welcome back, &nbsp;
+      span.text-info #{uname}&nbsp;
+      | !
+    p(style="text-align:right")
+      a.btn(href='/logout') Log out
+  else
+    h1.text-error Hey, who the hell are you??
+    form.form-inline(action='/auth', method='post')
+      input(name='uname', type='text', placeholder='Whats your name')
+      | 
+      button.btn.btn-primary Login
+  div(style='margin-top:120px;text-align:center')
+    a(href='http://localhost:3000') :3000
+    | &nbsp;|&nbsp;
+    a(href='http://localhost:3001') :3001
+    | &nbsp;|&nbsp;
+    a(href='http://localhost:3002') :3002
